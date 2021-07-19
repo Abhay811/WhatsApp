@@ -1,6 +1,7 @@
 package com.abhay.whatsapp
 
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -29,8 +30,12 @@ class MainActivity : AppCompatActivity() {
 //                R.id.navigation_camera, R.id.navigation_settings
 //            )
 //        )
+
 //        setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return super.onOptionsItemSelected(item)
+    }
 }

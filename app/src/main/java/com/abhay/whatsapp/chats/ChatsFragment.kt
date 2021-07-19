@@ -28,10 +28,7 @@ class ChatsFragment : Fragment() {
         _binding = FragmentChatsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val texView: TextView = binding.textChats
-        chatsViewModel.text.observe(viewLifecycleOwner, {
-            texView.text = it
-        })
+
 
         return root
 

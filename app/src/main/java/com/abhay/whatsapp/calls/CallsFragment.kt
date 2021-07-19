@@ -15,6 +15,7 @@ class CallsFragment : Fragment() {
     private lateinit var callsViewModel: CallsViewModel
     private var _binding: FragmentCallsBinding? = null
 
+    // This property is only valid between onCreateView and onDestroyView
     private val binding get() = _binding!!
 
     override fun onCreateView(

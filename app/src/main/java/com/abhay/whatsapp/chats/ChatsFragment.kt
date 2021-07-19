@@ -16,6 +16,7 @@ class ChatsFragment : Fragment() {
     private lateinit var chatsViewModel: ChatsViewModel
     private var _binding: FragmentChatsBinding? = null
 
+    // This property is only valid between onCreateView and onDestroyView
     private val binding get() = _binding!!
 
     override fun onCreateView(

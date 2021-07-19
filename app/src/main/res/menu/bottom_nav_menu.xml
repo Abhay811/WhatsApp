@@ -4,9 +4,7 @@
     <item
         android:id="@+id/navigation_status"
         android:title="@string/status"
-        android:icon="@drawable/ic_status"
-
-        />
+        android:icon="@drawable/ic_status" />
     <item
         android:id="@+id/navigation_calls"
         android:title="@string/calls"

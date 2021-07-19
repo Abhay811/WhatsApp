@@ -1,15 +1,13 @@
 package com.abhay.whatsapp.camera
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.abhay.whatsapp.chats.ChatsViewModel
 import com.abhay.whatsapp.databinding.FragmentCameraBinding
-import com.abhay.whatsapp.databinding.FragmentChatsBinding
 
 class CameraFragment : Fragment() {
 
@@ -17,6 +15,8 @@ class CameraFragment : Fragment() {
     private lateinit var cameraViewModel: CameraViewModel
     private var _binding: FragmentCameraBinding? = null
 
+
+    // This property is only valid between onCreateView and onDestroyView
     private val binding get() = _binding!!
 
     override fun onCreateView(

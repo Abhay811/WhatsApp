@@ -19,9 +19,10 @@ class MainActivity : AppCompatActivity() {
         setTheme(R.style.Theme_WhatsApp)
         setContentView(binding.root)
 
-//        val navView: BottomNavigationView = binding.bottomNavigationView
-//        val navController = findNavController(R.id.nav_host_fragment_activity_main)
-//
+        val navView: BottomNavigationView = binding.bottomNavigationView
+        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+
+
 //        val appBarConfiguration = AppBarConfiguration(
 //            setOf(
 //                R.id.navigation_chats, R.id.navigation_status, R.id.navigation_calls,
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 //            )
 //        )
 //        setupActionBarWithNavController(navController, appBarConfiguration)
-//        navView.setupWithNavController(navController)
+        navView.setupWithNavController(navController)
     }
 
 }

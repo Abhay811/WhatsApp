@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/miStatus"
+        android:title="Status"
+        android:icon="@drawable/ic_status"
+
+        />
+    <item
+        android:id="@+id/miCalls"
+        android:title="Calls"
+        android:icon="@drawable/ic_calls"/>
+    <item
+        android:id="@+id/miCamera"
+        android:title="Camera"
+        android:icon="@drawable/ic_camera"/>
+    <item
+        android:id="@+id/miChats"
+        android:title="Chats"
+        android:icon="@drawable/ic_chats"/>
+    <item
+        android:id="@+id/miSettings"
+        android:title="Settings"
+        android:icon="@drawable/ic_settings"/>
+
+</menu>

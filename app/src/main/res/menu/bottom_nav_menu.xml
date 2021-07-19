@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/miStatus"
-        android:title="Status"
+        android:id="@+id/navigation_status"
+        android:title="@string/status"
         android:icon="@drawable/ic_status"
 
         />
     <item
-        android:id="@+id/miCalls"
-        android:title="Calls"
+        android:id="@+id/navigation_calls"
+        android:title="@string/calls"
         android:icon="@drawable/ic_calls"/>
     <item
-        android:id="@+id/miCamera"
-        android:title="Camera"
+        android:id="@+id/navigation_camera"
+        android:title="@string/camera"
         android:icon="@drawable/ic_camera"/>
     <item
-        android:id="@+id/miChats"
-        android:title="Chats"
+        android:id="@+id/navigation_chats"
+        android:title="@string/chats"
         android:icon="@drawable/ic_chats"/>
     <item
-        android:id="@+id/miSettings"
-        android:title="Settings"
+        android:id="@+id/navigation_settings"
+        android:title="@string/settings"
         android:icon="@drawable/ic_settings"/>
 
 </menu>

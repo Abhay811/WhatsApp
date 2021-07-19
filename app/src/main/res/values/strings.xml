@@ -46,4 +46,9 @@
     <string name="done_txt">Done</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="settings">Settings</string>
+    <string name="chats">Chats</string>
+    <string name="camera">Camera</string>
+    <string name="calls">Calls</string>
+    <string name="status">Status</string>
 </resources>

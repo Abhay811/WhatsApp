@@ -1,13 +1,13 @@
 package com.abhay.whatsapp
 
 import android.os.Bundle
-import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.abhay.whatsapp.databinding.ActivityMainBinding
-import com.google.android.material.navigation.NavigationBarView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class MainActivity : AppCompatActivity() {
@@ -19,22 +19,17 @@ class MainActivity : AppCompatActivity() {
         setTheme(R.style.Theme_WhatsApp)
         setContentView(binding.root)
 
-
-        val chatsFragment = ChatsFragment()
-
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val inflater = menuInflater
-        inflater.inflate(R.menu.bottom_nav_menu, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when(item.itemId) {
-
-            else -> true
-        }
+//        val navView: BottomNavigationView = binding.bottomNavigationView
+//        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+//
+//        val appBarConfiguration = AppBarConfiguration(
+//            setOf(
+//                R.id.navigation_chats, R.id.navigation_status, R.id.navigation_calls,
+//                R.id.navigation_camera, R.id.navigation_settings
+//            )
+//        )
+//        setupActionBarWithNavController(navController, appBarConfiguration)
+//        navView.setupWithNavController(navController)
     }
 
 }

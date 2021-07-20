@@ -1,18 +1,19 @@
 package com.abhay.whatsapp.chats
 
 
+import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.abhay.whatsapp.R
 import com.abhay.whatsapp.adapter.ChatListAdapter
 import com.abhay.whatsapp.databinding.FragmentChatsBinding
+import com.abhay.whatsapp.helper.MyButtonClickListener
+import com.abhay.whatsapp.helper.MySwipeHelper
 import com.abhay.whatsapp.model.ChatList
 
 
@@ -41,30 +42,50 @@ class ChatsFragment : Fragment() {
         val adapter = ChatListAdapter(list)
         binding.rvChats.adapter = adapter
         binding.rvChats.layoutManager = LinearLayoutManager(context)
+        val recyclerView = binding.rvChats
+        recyclerView.setHasFixedSize(true)
 
-
-        val itemTouchHelperCallBack = object: ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
-            override fun onMove(
-                recyclerView: RecyclerView,
-                viewHolder: RecyclerView.ViewHolder,
-                target: RecyclerView.ViewHolder
-            ): Boolean {
-                return false
+        val swipeHelper: MySwipeHelper = object : MySwipeHelper(this, recyclerView, 200) {
+            override fun instantiateMyButton(
+                viewHolder: RecyclerView.ViewHolder?,
+                buffer: MutableList<MyButton>?
+            ) {
+                buffer?.add(
+                    MyButton(this,
+                        "Delete",
+                        R.drawable.ic_archive,
+                        10,
+                        Color.parseColor("#ff3c30"),
+                        object : MyButtonClickListener {
+                            override fun onClick(pos: Int) {
+                                //                                Toast.makeText(
+                                //                                    this,
+                                //                                    "Delete Clicked",
+                                //                                    Toast.LENGTH_LONG
+                                //                                ).show()
+                                Log.d("Main", "Delete Clicked")
+                            }
+                        })
+                )
+                buffer?.add(
+                    MyButton(this,
+                        "Update", R.drawable.ic_baseline_more_horiz_24, 10, Color.parseColor("#ff9502"),
+                        object : MyButtonClickListener {
+                            override fun onClick(pos: Int) {
+//                                Toast.makeText(
+//                                    this@MainActivity,
+//                                    "Update Clicked",
+//                                    Toast.LENGTH_LONG
+//                                ).show()
+                                Log.d("Main", "Update Clicked")
+                            }
+                        })
+                )
             }
 
-            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                val pos = viewHolder.absoluteAdapterPosition
-                when(direction) {
-                    ItemTouchHelper.LEFT -> {
-                        binding.rvChats.removeViewAt(pos)
-                        list.removeAt(pos)
-                        adapter.notifyItemRemoved(pos)
-                    }
-                }
-            }
+
         }
-        val itemTouchHelper = ItemTouchHelper(itemTouchHelperCallBack)
-        itemTouchHelper.attachToRecyclerView(binding.rvChats)
+
         return root
 
     }
